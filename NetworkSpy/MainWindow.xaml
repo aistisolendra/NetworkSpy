@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NetworkSpy"
         mc:Ignorable="d"
+        WindowStyle="None"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <!-- Definitions -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Navigation -->
+        <Grid Background="#00A2E2"
+              Grid.ColumnSpan="2">
+            <!-- Navigation definitions -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Navigation btn's-->
+            <Button Grid.Column="0"
+                    Foreground="White"
+                    Background="#00A2E2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    BorderThickness="1">
+                NetworkSpy
+            </Button>
+        </Grid>
     </Grid>
 </Window>
