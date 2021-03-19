@@ -31,16 +31,16 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
             <!-- Navigation btn's-->
-            <Button Grid.Column="0"
-                    Foreground="White"
-                    Background="#00A2E2"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    BorderThickness="1">
+            <Button Grid.Column="0" Style="{StaticResource NavBtn}">
                 NetworkSpy
             </Button>
+
+            <Button Grid.Column="1" Style="{StaticResource NavBtn}">
+                Connections
+            </Button>
+
         </Grid>
     </Grid>
 </Window>

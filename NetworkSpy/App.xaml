@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:NetworkSpy"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="NavBtn" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#00A2E2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Fonts/#Arimo"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
     </Application.Resources>
 </Application>
