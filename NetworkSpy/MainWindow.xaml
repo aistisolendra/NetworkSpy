@@ -33,14 +33,15 @@
             </Grid.ColumnDefinitions>
 
             <!-- Navigation btn's-->
-            <Button Grid.Column="0" Style="{StaticResource NavBtn}">
+            <Button Grid.Column="0" Style="{StaticResource NavBtn}" Command="{Binding UpdateViewCommand}" CommandParameter="Home">
                 NetworkSpy
             </Button>
 
-            <Button Grid.Column="1" Style="{StaticResource NavBtn}">
+            <Button Grid.Column="1" Style="{StaticResource NavBtn}" Command="{Binding UpdateViewCommand}" CommandParameter="Connections">
                 Connections
             </Button>
 
         </Grid>
+        <ContentControl Content="{Binding SelectedViewModel}"/>
     </Grid>
 </Window>

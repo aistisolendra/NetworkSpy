@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NetworkSpy.ViewModels
 {
-    class ConnectionsViewModel
+    public class ConnectionsViewModel : BaseViewModel
     {
     }
 }
