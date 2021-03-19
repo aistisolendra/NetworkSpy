@@ -18,7 +18,7 @@ namespace NetworkSpy.Views
     /// <summary>
     /// Interaction logic for ConnectionsView.xaml
     /// </summary>
-    public partial class ConnectionsView : Page
+    public partial class ConnectionsView : UserControl
     {
         public ConnectionsView()
         {
