@@ -1,19 +1,15 @@
 ﻿using NetworkSpy.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace NetworkSpy.Commands
 {
     public class UpdateViewCommand : ICommand
     {
-        private MainViewModel mainViewModel;
+        private MainViewModel _mainViewModel;
         public UpdateViewCommand(MainViewModel mainViewModel)
         {
-            this.mainViewModel = mainViewModel;
+            _mainViewModel = mainViewModel;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -25,10 +21,15 @@ namespace NetworkSpy.Commands
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString() == "Home")
-                mainViewModel.SelectedViewModel = new HomeViewModel();
-            else if (parameter.ToString() == "Connections")
-                mainViewModel.SelectedViewModel = new ConnectionsViewModel();
+            switch (parameter.ToString())
+            {
+                case "Home":
+                    _mainViewModel.SelectedViewModel = new HomeViewModel();
+                    break;
+                case "Interface":
+                    _mainViewModel.SelectedViewModel = new InterfacesViewModel();
+                    break;
+            }
         }
     }
 }
