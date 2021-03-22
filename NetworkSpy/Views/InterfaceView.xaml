@@ -19,15 +19,35 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="GetInterfaces" Content="Scan" Grid.Column="3" Grid.Row="1" Style="{StaticResource Btn1}"/>
-        <TextBlock x:Name="InterfaceCountText" Text="No interfaces found" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Style="{StaticResource Text1}" FontSize="12"/>
+        <Button x:Name="GetInterfaces" Content="Scan"
+                Grid.Column="3" Grid.Row="1"
+                Foreground="White"
+                Style="{StaticResource Btn1}">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="110" Height="26"
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
-        <ListView x:Name="Interfaces" Grid.Row="3" Grid.ColumnSpan="7" Grid.Column="0">
+        <TextBlock x:Name="InterfaceCountText" Text="No interfaces found"
+                   Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2"
+                   Style="{StaticResource Text1}"
+                   FontSize="16"/>
+
+        <ListView x:Name="Interfaces"
+                  Grid.Row="3" Grid.ColumnSpan="7"
+                  Grid.Column="0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Template">
@@ -45,7 +65,7 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid VerticalAlignment="Center" Width="800" >
+                    <Grid VerticalAlignment="Center" Width="760" >
                         <!-- definitions -->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -56,22 +76,34 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border Grid.Column="0" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=Name}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=Name}"
+                                       FontSize="14"/>
                         </Border>
                         <Border Grid.Column="1" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=Description}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=Description}"
+                                       FontSize="14"/>
                         </Border>
                         <Border Grid.Column="2" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=InterfaceType}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=InterfaceType}" 
+                                       FontSize="14"/>
                         </Border>
                         <Border Grid.Column="3" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=OpStatus}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=OpStatus}" 
+                                       FontSize="14"/>
                         </Border>
                         <Border Grid.Column="4" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=DNSEnabled}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=DNSEnabled}" 
+                                       FontSize="14"/>
                         </Border>
                         <Border Grid.Column="5" Style="{StaticResource Border1}">
-                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=IPVersion}" />
+                            <TextBlock Style="{StaticResource Text2}"
+                                       Text="{Binding Mode=OneWay, Path=IPVersion}"
+                                       FontSize="14"/>
                         </Border>
                     </Grid>
                 </DataTemplate>
@@ -83,7 +115,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Width="800" VerticalAlignment="Center">
+                        <Grid Grid.Row="0" Width="760" VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -92,30 +124,36 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Border Grid.Column="0" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">Name</TextBlock>
-                            </Border>
-                            <Border Grid.Column="1" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">Description</TextBlock>
-                            </Border>
-                            <Border Grid.Column="2" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">Interface type</TextBlock>
-                            </Border>
-                            <Border Grid.Column="3" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">Operational status</TextBlock>
-                            </Border>
-                            <Border Grid.Column="4" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">DNS enabled</TextBlock>
-                            </Border>
-                            <Border Grid.Column="5" Style="{StaticResource Border1}">
-                                <TextBlock Style="{StaticResource Text2}">IPV versions</TextBlock>
-                            </Border>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="0"
+                                           Text="Name"/>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="1"
+                                           Text="Description"/>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="2"
+                                           Text="Interface type"/>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="3"
+                                           Text="Status"/>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="4"
+                                           Text="DNS enabled"/>
+                            <TextBlock Style="{StaticResource Text2}"
+                                           FontSize="18"
+                                           Grid.Column="5"
+                                           Text="IPV versions"/>
                         </Grid>
                         <ItemsPresenter Grid.Row="1"/>
                     </Grid>
                 </ControlTemplate>
             </ListView.Template>
         </ListView>
-    </Grid>
 
+    </Grid>
 </UserControl>
