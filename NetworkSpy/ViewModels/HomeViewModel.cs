@@ -1,6 +1,8 @@
-﻿namespace NetworkSpy.ViewModels
+﻿using Caliburn.Micro;
+
+namespace NetworkSpy.ViewModels
 {
-    public class HomeViewModel : BaseViewModel
+    public class HomeViewModel : Screen
     {
     }
 }

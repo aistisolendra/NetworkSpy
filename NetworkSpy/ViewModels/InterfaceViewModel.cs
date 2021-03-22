@@ -3,10 +3,10 @@ using Caliburn.Micro;
 
 namespace NetworkSpy.ViewModels
 {
-    public class InterfacesViewModel : BaseViewModel
+    public class InterfaceViewModel : Screen
     {
         public BindableCollection<InterfacesModel> Interfaces { get; set; }
-        public InterfacesViewModel()
+        public InterfaceViewModel()
         {
             Interfaces = new BindableCollection<InterfacesModel>()
             {
