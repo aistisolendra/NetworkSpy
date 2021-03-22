@@ -24,17 +24,120 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Scan" Grid.Column="3" Grid.Row="1" Style="{StaticResource Btn1}"/>
-        <TextBlock Text="No interfaces found. (0)" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Style="{StaticResource Text1}" FontSize="12"/>
-        <ListView Grid.Row="3" Grid.ColumnSpan="7">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Interface Type" Width="200" DisplayMemberBinding="{Binding InterfaceType}"/>
-                    <GridViewColumn Header="Operational status" Width="200" DisplayMemberBinding="{Binding OpStatus}"/>
-                    <GridViewColumn Header="DNS enabled" Width="200" DisplayMemberBinding="{Binding DNSEnabled}"/>
-                    <GridViewColumn Header="IP version" Width="200" DisplayMemberBinding="{Binding IPVersion}"/>
-                </GridView>
-            </ListView.View>
+        <Button x:Name="GetInterfaces" Content="Scan" Grid.Column="3" Grid.Row="1" Style="{StaticResource Btn1}"/>
+        <TextBlock x:Name="InterfaceCountText" Text="No interfaces found" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2" Style="{StaticResource Text1}" FontSize="12"/>
+
+        <ListView x:Name="Interfaces" Grid.Row="3" Grid.ColumnSpan="7" Grid.Column="0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Grid>
+                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid VerticalAlignment="Center" Width="800">
+                        <!-- definitions -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="5" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                            </Style>
+                            <Style TargetType="Border">
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="BorderBrush" Value="#00A2E2" />
+                            </Style>
+                        </Grid.Resources>
+                        <Border Grid.Column="0">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=Name}" />
+                        </Border>
+                        <Border Grid.Column="1">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=Description}" />
+                        </Border>
+                        <Border Grid.Column="2">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=InterfaceType}" />
+                        </Border>
+                        <Border Grid.Column="3">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=OpStatus}" />
+                        </Border>
+                        <Border Grid.Column="4">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=DNSEnabled}" />
+                        </Border>
+                        <Border Grid.Column="5">
+                            <TextBlock Text="{Binding Mode=OneWay, Path=IPVersion}" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Template>
+                <ControlTemplate>
+                    <Grid HorizontalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Width="800" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Margin" Value="5" />
+                                    <Setter Property="Foreground" Value="Black" />
+                                    <Setter Property="FontWeight" Value="Bold" />
+                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                </Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="1" />
+                                    <Setter Property="BorderBrush" Value="#00A2E2" />
+                                </Style>
+                            </Grid.Resources>
+                            <Border Grid.Column="0">
+                                <TextBlock>Name</TextBlock>
+                            </Border>
+                            <Border Grid.Column="1">
+                                <TextBlock>Description</TextBlock>
+                            </Border>
+                            <Border Grid.Column="2">
+                                <TextBlock>Interface type</TextBlock>
+                            </Border>
+                            <Border Grid.Column="3">
+                                <TextBlock>Operational status</TextBlock>
+                            </Border>
+                            <Border Grid.Column="4">
+                                <TextBlock>DNS enabled</TextBlock>
+                            </Border>
+                            <Border Grid.Column="5">
+                                <TextBlock>IPV versions</TextBlock>
+                            </Border>
+                        </Grid>
+                        <ItemsPresenter Grid.Row="1"/>
+                    </Grid>
+                </ControlTemplate>
+            </ListView.Template>
         </ListView>
     </Grid>
 
