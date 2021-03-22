@@ -3,8 +3,110 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NetworkSpy.Views"
              mc:Ignorable="d" 
+             Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid/>
+    <Grid>
+        <!-- Definitions -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Left panel -->
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="30"
+                    SnapsToDevicePixels="True">
+
+            <StackPanel Orientation="Horizontal" Margin="5,0,0,10">
+                <Image Source="/Images/MainPage_logo.png"
+                   Width="60" Height="60"/>
+                <TextBlock Text="NetworkSpy"
+                       Style="{StaticResource Text1}"
+                       FontSize="26"
+                       Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Text="Know" Style="{StaticResource Text1}"
+                           HorizontalAlignment="Left" FontSize="20"/>
+                <TextBlock Text="Your" Style="{StaticResource Text1}"
+                           HorizontalAlignment="Left" FontSize="20"/>
+                <TextBlock Text="Computer" Style="{StaticResource Text1}"
+                           HorizontalAlignment="Left" FontSize="20"/>
+            </StackPanel>
+
+            <TextBlock Text="Monitor other PCs on your network and interfaces that you might not know about." Style="{StaticResource Text1}"
+                       HorizontalAlignment="Left" FontSize="14"
+                       Margin="5"/>
+        </StackPanel>
+
+        <!-- Right panel -->
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="1" Grid.Row="1"
+                    VerticalAlignment="Center">
+            <Border Width="300"
+                    Height="20"
+                    Background="Aqua"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="280"
+                    Height="20"
+                    Background="#FF3CFFFF"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="260"
+                    Height="20"
+                    Background="Aqua"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="240"
+                    Height="20"
+                    Background="Aqua"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="220"
+                    Height="20"
+                    Background="Aqua"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="200"
+                    Height="20"
+                    Background="Aqua"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="220"
+                    Height="20"
+                    Background="#FFFF005C"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="240"
+                    Height="20"
+                    Background="#FFFF005C"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="260"
+                    Height="20"
+                    Background="#FFFF005C"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="280"
+                    Height="20"
+                    Background="#FFFF005C"
+                    CornerRadius="20"
+                    Margin="5"/>
+            <Border Width="300"
+                    Height="20"
+                    Background="#FFFF005C"
+                    CornerRadius="20"
+                    Margin="5"/>
+        </StackPanel>
+    </Grid>
 </UserControl>
