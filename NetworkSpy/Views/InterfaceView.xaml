@@ -45,7 +45,7 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid VerticalAlignment="Center" Width="800">
+                    <Grid VerticalAlignment="Center" Width="800" >
                         <!-- definitions -->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -55,34 +55,23 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Grid.Resources>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Margin" Value="5" />
-                                <Setter Property="Foreground" Value="Black" />
-                                <Setter Property="TextWrapping" Value="Wrap"></Setter>
-                            </Style>
-                            <Style TargetType="Border">
-                                <Setter Property="BorderThickness" Value="1" />
-                                <Setter Property="BorderBrush" Value="#00A2E2" />
-                            </Style>
-                        </Grid.Resources>
-                        <Border Grid.Column="0">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=Name}" />
+                        <Border Grid.Column="0" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=Name}" />
                         </Border>
-                        <Border Grid.Column="1">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=Description}" />
+                        <Border Grid.Column="1" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=Description}" />
                         </Border>
-                        <Border Grid.Column="2">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=InterfaceType}" />
+                        <Border Grid.Column="2" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=InterfaceType}" />
                         </Border>
-                        <Border Grid.Column="3">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=OpStatus}" />
+                        <Border Grid.Column="3" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=OpStatus}" />
                         </Border>
-                        <Border Grid.Column="4">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=DNSEnabled}" />
+                        <Border Grid.Column="4" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=DNSEnabled}" />
                         </Border>
-                        <Border Grid.Column="5">
-                            <TextBlock Text="{Binding Mode=OneWay, Path=IPVersion}" />
+                        <Border Grid.Column="5" Style="{StaticResource Border1}">
+                            <TextBlock Style="{StaticResource Text2}" Text="{Binding Mode=OneWay, Path=IPVersion}" />
                         </Border>
                     </Grid>
                 </DataTemplate>
@@ -103,35 +92,23 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Grid.Resources>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="Margin" Value="5" />
-                                    <Setter Property="Foreground" Value="Black" />
-                                    <Setter Property="FontWeight" Value="Bold" />
-                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                                </Style>
-                                <Style TargetType="Border">
-                                    <Setter Property="BorderThickness" Value="1" />
-                                    <Setter Property="BorderBrush" Value="#00A2E2" />
-                                </Style>
-                            </Grid.Resources>
-                            <Border Grid.Column="0">
-                                <TextBlock>Name</TextBlock>
+                            <Border Grid.Column="0" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">Name</TextBlock>
                             </Border>
-                            <Border Grid.Column="1">
-                                <TextBlock>Description</TextBlock>
+                            <Border Grid.Column="1" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">Description</TextBlock>
                             </Border>
-                            <Border Grid.Column="2">
-                                <TextBlock>Interface type</TextBlock>
+                            <Border Grid.Column="2" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">Interface type</TextBlock>
                             </Border>
-                            <Border Grid.Column="3">
-                                <TextBlock>Operational status</TextBlock>
+                            <Border Grid.Column="3" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">Operational status</TextBlock>
                             </Border>
-                            <Border Grid.Column="4">
-                                <TextBlock>DNS enabled</TextBlock>
+                            <Border Grid.Column="4" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">DNS enabled</TextBlock>
                             </Border>
-                            <Border Grid.Column="5">
-                                <TextBlock>IPV versions</TextBlock>
+                            <Border Grid.Column="5" Style="{StaticResource Border1}">
+                                <TextBlock Style="{StaticResource Text2}">IPV versions</TextBlock>
                             </Border>
                         </Grid>
                         <ItemsPresenter Grid.Row="1"/>

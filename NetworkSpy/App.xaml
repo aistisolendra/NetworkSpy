@@ -37,6 +37,17 @@
                         <Setter Property="FontWeight" Value="Medium"/>
                         <Setter Property="TextWrapping" Value="Wrap"/>
                     </Style>
+
+                    <Style x:Key="Text2" TargetType="TextBlock">
+                        <Setter Property="Margin" Value="5" />
+                        <Setter Property="Foreground" Value="#00A2E2" />
+                        <Setter Property="TextWrapping" Value="Wrap"></Setter>
+                    </Style>
+
+                    <Style x:Key="Border1" TargetType="Border">
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="BorderBrush" Value="#00A2E2" />
+                    </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
