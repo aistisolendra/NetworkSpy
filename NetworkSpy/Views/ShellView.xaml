@@ -4,42 +4,52 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
-     <Grid>
-         <!--Definitions--> 
-    <Grid.RowDefinitions>
-        <RowDefinition Height="25"/>
-        <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-
-     <!--Navigation--> 
-    <Grid Background="#00A2E2"
-              Grid.ColumnSpan="2">
-         <!--Navigation definitions--> 
+        Title="NetworkSpy" Height="450" Width="800">
+    <Grid>
+        <!--Definitions-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-         <!--Navigation btn's-->
-            <Button x:Name="LoadMainPage" Grid.Column="0" Style="{StaticResource NavBtn}">
-            NetworkSpy
-        </Button>
+        <!--Navigation-->
+        <Grid Background="#00A2E2"
+              Grid.ColumnSpan="2">
+            <!--Navigation definitions-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <Button x:Name="LoadInterfacePage" Grid.Column="1" Style="{StaticResource NavBtn}">
-            Connections
-        </Button>
+            <!--Navigation-->
+            <StackPanel Orientation="Horizontal"
+                        Grid.ColumnSpan="3"
+                        Grid.Column="2"
+                        HorizontalAlignment="Center">
+                <Button x:Name="LoadMainPage"
+                        Style="{StaticResource NavBtn}"
+                        Padding="5"
+                        Margin="0,0,10,0">
+                    NetworkSpy
+                </Button>
 
-    </Grid>
-    <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" />
+                <Button x:Name="LoadInterfacePage"
+                        Style="{StaticResource NavBtn}"
+                        Padding="5"
+                        Margin="0,0,10,0">
+                    Interfaces
+                </Button>
+            </StackPanel>
+        </Grid>
+        <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" />
     </Grid>
 </Window>

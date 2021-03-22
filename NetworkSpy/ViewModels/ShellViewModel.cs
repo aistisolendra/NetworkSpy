@@ -7,6 +7,11 @@ namespace NetworkSpy.ViewModels
         private readonly HomeViewModel _homeViewModel = new HomeViewModel();
         private readonly InterfaceViewModel _interfacesViewModel = new InterfaceViewModel();
 
+        public ShellViewModel()
+        {
+            ActivateItem(_homeViewModel);
+        }
+
         public void LoadMainPage()
         {
             ActivateItem(_homeViewModel);
