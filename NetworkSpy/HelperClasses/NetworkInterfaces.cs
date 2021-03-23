@@ -10,6 +10,5 @@ namespace NetworkSpy.HelperClasses
         {
             return NetworkInterface.GetAllNetworkInterfaces().ToList();
         }
-
     }
 }

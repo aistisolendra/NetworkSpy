@@ -4,8 +4,8 @@ namespace NetworkSpy.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        private readonly HomeViewModel _homeViewModel = new HomeViewModel();
-        private readonly InterfaceViewModel _interfacesViewModel = new InterfaceViewModel();
+        private readonly HomeViewModel _homeViewModel = new();
+        private readonly InterfaceViewModel _interfacesViewModel = new();
 
         public ShellViewModel()
         {

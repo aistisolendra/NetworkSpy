@@ -50,6 +50,7 @@
                 </Button>
             </StackPanel>
         </Grid>
-        <ContentControl x:Name="ActiveItem" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" />
+        <ContentControl x:Name="ActiveItem"
+                        Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" />
     </Grid>
 </Window>

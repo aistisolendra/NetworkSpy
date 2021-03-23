@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 using System.Net.NetworkInformation;
 using NetworkSpy.Models;
 using Caliburn.Micro;
@@ -11,7 +12,7 @@ namespace NetworkSpy.ViewModels
         public BindableCollection<InterfacesModel> Interfaces { get; set; }
         public InterfaceViewModel()
         {
-            Interfaces = new BindableCollection<InterfacesModel>();
+            Interfaces = new();
             GetInterfaces();
         }
 
@@ -23,7 +24,7 @@ namespace NetworkSpy.ViewModels
 
             foreach (var intf in interfaces)
             {
-                Interfaces.Add(new InterfacesModel()
+                Interfaces.Add(new InterfacesModel
                 {
                     Name = intf.Name,
                     Description = intf.Description,
@@ -65,6 +66,7 @@ namespace NetworkSpy.ViewModels
         }
 
         private string _interfaceCountText;
+        [DefaultValue("No interfaces found")]
         public string InterfaceCountText
         {
             get => _interfaceCountText;

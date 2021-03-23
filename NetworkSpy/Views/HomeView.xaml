@@ -17,7 +17,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
-        
+
         <!-- Left panel -->
         <StackPanel Orientation="Vertical"
                     Grid.Row="1"
@@ -43,7 +43,9 @@
                            HorizontalAlignment="Left" FontSize="20"/>
             </StackPanel>
 
-            <TextBlock Text="Monitor other PCs on your network and interfaces that you might not know about." Style="{StaticResource Text1}"
+            <TextBlock Text="Monitor other PCs on your network and interfaces
+                             that you might not know about."
+                       Style="{StaticResource Text1}"
                        HorizontalAlignment="Left" FontSize="14"
                        Margin="5"/>
         </StackPanel>

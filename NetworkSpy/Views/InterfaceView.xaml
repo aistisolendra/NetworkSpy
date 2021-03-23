@@ -40,7 +40,7 @@
             </Button.Template>
         </Button>
 
-        <TextBlock x:Name="InterfaceCountText" Text="No interfaces found"
+        <TextBlock x:Name="InterfaceCountText" Text="{Binding InterfaceCountText}"
                    Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="2"
                    Style="{StaticResource Text1}"
                    FontSize="16"/>
