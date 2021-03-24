@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Forms;
 using Caliburn.Micro;
 using NetworkSpy.HelperClasses;
+using NetworkSpy.Properties;
+using Application = System.Windows.Application;
 
 namespace NetworkSpy.ViewModels
 {
@@ -16,8 +18,8 @@ namespace NetworkSpy.ViewModels
         public ShellViewModel()
         {
             _notifyIcon = NotifyIconHelper.CreateNotifyIcon();
-
             _notifyIcon.DoubleClick += ShowWindow;
+            HandleNotifyIconMenuEvents();
 
             ActivateItem(_homeViewModel);
         }
@@ -32,15 +34,33 @@ namespace NetworkSpy.ViewModels
             ActivateItem(_interfacesViewModel);
         }
 
+        public void OnClose(CancelEventArgs e)
+        {
+            MainWindowVisibility = Visibility.Hidden;
+            e.Cancel = true;
+        }
+
         private void ShowWindow(object sender, EventArgs e)
         {
             MainWindowVisibility = Visibility.Visible;
         }
 
-        public void OnClose(CancelEventArgs e)
+        private void CloseApp(object sender, EventArgs e)
         {
-            MainWindowVisibility = Visibility.Hidden;
-            e.Cancel = true;
+            _notifyIcon.Dispose();
+            Application.Current.Shutdown();
+        }
+
+        private void HandleNotifyIconMenuEvents()
+        {
+            NotifyIconHelper.AddMenuItem(_notifyIcon,
+                name: Resources.ProjectName,
+                image: Resources.MainPage_logo.ToBitmap(),
+                eventHandler: ShowWindow);
+
+            NotifyIconHelper.AddMenuItem(_notifyIcon,
+                name: "Exit app",
+                eventHandler: CloseApp);
         }
 
         private Visibility _mainWindowVisibility;
