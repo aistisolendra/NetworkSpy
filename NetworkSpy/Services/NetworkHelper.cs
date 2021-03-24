@@ -1,6 +1,6 @@
 ﻿using System.Net.NetworkInformation;
 
-namespace NetworkSpy.HelperClasses
+namespace NetworkSpy.Services
 {
     public static class NetworkHelper
     {

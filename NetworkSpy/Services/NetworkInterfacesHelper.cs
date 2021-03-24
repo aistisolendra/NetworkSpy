@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using NetworkSpy.Models;
 
-namespace NetworkSpy.HelperClasses
+namespace NetworkSpy.Services
 {
     public static class NetworkInterfacesHelper
     {

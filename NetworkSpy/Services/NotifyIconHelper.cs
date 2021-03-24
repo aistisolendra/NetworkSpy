@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using NetworkSpy.Properties;
 
-namespace NetworkSpy.HelperClasses
+namespace NetworkSpy.Services
 {
     public static class NotifyIconHelper
     {
