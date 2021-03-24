@@ -51,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -75,7 +76,8 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="HelperClasses\NetworkHelper.cs" />
-    <Compile Include="HelperClasses\NetworkInterfaces.cs" />
+    <Compile Include="HelperClasses\NetworkInterfacesHelper.cs" />
+    <Compile Include="HelperClasses\NotifyIconHelper.cs" />
     <Compile Include="Models\InterfacesModel.cs" />
     <Compile Include="ViewModels\InterfaceViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -139,6 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\MainPage_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MainPage_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
