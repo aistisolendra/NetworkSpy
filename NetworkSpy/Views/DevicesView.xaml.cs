@@ -12,13 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Caliburn.Micro;
 
 namespace NetworkSpy.Views
 {
     /// <summary>
     /// Interaction logic for DevicesView.xaml
     /// </summary>
-    public partial class DevicesView : Page
+    public partial class DevicesView : UserControl
     {
         public DevicesView()
         {
