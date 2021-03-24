@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Drawing;
+
 namespace NetworkSpy.Properties {
     using System;
     
@@ -63,7 +65,7 @@ namespace NetworkSpy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon MainPage_logo {
+        internal static Icon MainPage_logo {
             get {
                 object obj = ResourceManager.GetObject("MainPage_logo", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
