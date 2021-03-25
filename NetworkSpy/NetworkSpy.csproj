@@ -75,9 +75,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="HelperClasses\NetworkHelper.cs" />
-    <Compile Include="HelperClasses\NetworkInterfacesHelper.cs" />
-    <Compile Include="HelperClasses\NotifyIconHelper.cs" />
+    <Compile Include="Services\DevicesFinder.cs" />
+    <Compile Include="Services\InterfacesFinder.cs" />
+    <Compile Include="Services\NotifyIconService.cs" />
+    <Compile Include="Models\DeviceModel.cs" />
     <Compile Include="Models\InterfacesModel.cs" />
     <Compile Include="ViewModels\DevicesViewModel.cs" />
     <Compile Include="ViewModels\InterfaceViewModel.cs" />
@@ -134,7 +135,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Fonts\Arimo.ttf" />
+    <Resource Include="Resources\Arimo.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,13 +149,14 @@
     <Resource Include="MainPage_logo.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MainPage_logo.png" />
+    <Resource Include="Resources\MainPage_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MainPage_logo.ico" />
+    <Resource Include="Resources\MainPage_logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Icon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
