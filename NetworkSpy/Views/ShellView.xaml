@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        cal:Message.Attach="[Event Closing] = [Action OnClose($eventArgs)]"
+        cal:Message.Attach="[Event Closing] = [Action OnAppClose($eventArgs)]"
         Visibility="{Binding Mode=TwoWay, Path=MainWindowVisibility}"
         Title="NetworkSpy" Height="450" Width="800">
     <Grid>
@@ -35,8 +35,8 @@
 
             <!--Navigation-->
             <StackPanel Orientation="Horizontal"
-                        Grid.ColumnSpan="3"
-                        Grid.Column="2"
+                        Grid.ColumnSpan="5"
+                        Grid.Column="1"
                         HorizontalAlignment="Center">
                 <Button x:Name="LoadMainPage"
                         Style="{StaticResource NavBtn}"
@@ -50,6 +50,12 @@
                         Padding="5"
                         Margin="0,0,10,0">
                     Interfaces
+                </Button>
+                <Button x:Name="LoadDevicesPage"
+                        Style="{StaticResource NavBtn}"
+                        Padding="5"
+                        Margin="0,0,10,0">
+                    Connected Devices
                 </Button>
             </StackPanel>
         </Grid>
