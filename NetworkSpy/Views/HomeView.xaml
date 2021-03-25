@@ -26,7 +26,7 @@
                     SnapsToDevicePixels="True">
 
             <StackPanel Orientation="Horizontal" Margin="5,0,0,10">
-                <Image Source="/Images/MainPage_logo.png"
+                <Image Source="/Resources/MainPage_logo.png"
                    Width="60" Height="60"/>
                 <TextBlock Text="NetworkSpy"
                        Style="{StaticResource Text1}"
