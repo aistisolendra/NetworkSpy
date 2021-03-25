@@ -2,34 +2,34 @@
 using System.Linq;
 using NetworkSpy.Models;
 using Caliburn.Micro;
-using NetworkSpy.HelperClasses;
+using NetworkSpy.Services;
 
 namespace NetworkSpy.ViewModels
 {
     public class InterfaceViewModel : Screen
     {
+        private readonly InterfacesFinder _interfacesFinder;
         public BindableCollection<InterfacesModel> Interfaces { get; set; }
         public InterfaceViewModel()
         {
-            Interfaces = new();
-            GetInterfaces();
+            _interfacesFinder = new InterfacesFinder();
+            Interfaces = new BindableCollection<InterfacesModel>();
+
+            GetAllInterfaces();
         }
 
-        public void GetInterfaces()
+        public void GetAllInterfaces()
         {
             Interfaces.Clear();
+            Interfaces = _interfacesFinder.FindInterfaces();
 
-            var interfaces = NetworkInterfacesHelper.GetNetworkInterfaces();
-            interfaces.ForEach(i => Interfaces
-                      .Add(NetworkInterfacesHelper.CreateInterfaceModel(i)));
-
-            UpdateInterfaceInformation();
+            UpdatePageText();
         }
 
-        private void UpdateInterfaceInformation()
+        private void UpdatePageText()
         {
-            int intfCount = Interfaces.Count();
-            InterfaceCountText = intfCount > 0 ? $"{intfCount} interfaces found" : "No interfaces found";
+            int interfacesCount = Interfaces.Count();
+            InterfaceCountText = interfacesCount > 0 ? $"{interfacesCount} interfaces found" : "No interfaces found";
         }
 
         private string _interfaceCountText;
