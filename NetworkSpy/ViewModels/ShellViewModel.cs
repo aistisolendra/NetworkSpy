@@ -1,27 +1,40 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Forms;
 using Caliburn.Micro;
-using NetworkSpy.HelperClasses;
 using NetworkSpy.Properties;
+using NetworkSpy.Services;
 using Application = System.Windows.Application;
 
 namespace NetworkSpy.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        private readonly NotifyIcon _notifyIcon;
+        private readonly NotifyIconService _notifyIconService;
         private readonly HomeViewModel _homeViewModel = new();
         private readonly InterfaceViewModel _interfacesViewModel = new();
+        private readonly DevicesViewModel _devicesViewModel = new();
 
         public ShellViewModel()
         {
-            _notifyIcon = NotifyIconHelper.CreateNotifyIcon();
-            _notifyIcon.DoubleClick += ShowWindow;
-            HandleNotifyIconMenuEvents();
+            _notifyIconService = new NotifyIconService();
 
+            SetNotifyIconFunctions();
             ActivateItem(_homeViewModel);
+        }
+
+        public void SetNotifyIconFunctions()
+        {
+            _notifyIconService.NotifyIconInstance.DoubleClick += ShowWindow;
+
+            _notifyIconService.AddMenuItem(
+                name: Resources.ProjectName,
+                image: Resources.MainPage_logo.ToBitmap(),
+                eventHandler: ShowWindow);
+
+            _notifyIconService.AddMenuItem(
+                name: "Exit app",
+                eventHandler: OnAppClose);
         }
 
         public void LoadMainPage()
@@ -32,6 +45,11 @@ namespace NetworkSpy.ViewModels
         public void LoadInterfacePage()
         {
             ActivateItem(_interfacesViewModel);
+        }
+
+        public void LoadDevicesPage()
+        {
+            ActivateItem(_devicesViewModel);
         }
 
         public void OnClose(CancelEventArgs e)
@@ -45,26 +63,13 @@ namespace NetworkSpy.ViewModels
             MainWindowVisibility = Visibility.Visible;
         }
 
-        private void CloseApp(object sender, EventArgs e)
+        private void OnAppClose(object sender, EventArgs e)
         {
-            _notifyIcon.Dispose();
+            _notifyIconService.NotifyIconInstance.Dispose();
             Application.Current.Shutdown();
         }
 
-        private void HandleNotifyIconMenuEvents()
-        {
-            NotifyIconHelper.AddMenuItem(_notifyIcon,
-                name: Resources.ProjectName,
-                image: Resources.MainPage_logo.ToBitmap(),
-                eventHandler: ShowWindow);
-
-            NotifyIconHelper.AddMenuItem(_notifyIcon,
-                name: "Exit app",
-                eventHandler: CloseApp);
-        }
-
         private Visibility _mainWindowVisibility;
-
         [DefaultValue(true)]
         public Visibility MainWindowVisibility
         {
